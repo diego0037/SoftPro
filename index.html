@@ -96,16 +96,20 @@
             <div class="col-md-3">
               <h5>Calculate Optimal Order</h5>
               <div class="form-group">
-                <label for="usr">Demand:</label>
+                <label for="usr">Demand (D):</label>
                 <input class="form-control" id="demand" type="text" name="demand">
               </div>
               <div class="form-group">
-                <label for="usr">Order Cost:</label>
+                <label for="usr">Order Cost (S):</label>
                 <input class="form-control" id="cd" type="text" name="orden">
               </div>
               <div class="form-group">
-                <label for="usr">Maintain Cost:</label>
+                <label for="usr">Maintain Cost %:</label>
                 <input class="form-control" id="cm" type="text" name="mantener">
+              </div>
+              <div class="form-group">
+                <label for="usr">Unit Cost (P):</label>
+                <input class="form-control" id="UCP" type="text" name="UCP">
               </div>
               <button class="btn btn-primary" id="calc">Calculate</button>
               <p><label id="q"></label></p>
@@ -129,18 +133,19 @@
               <h5>Maintain Cost</h5>
               <br>
               <div class="form-group">
-                <label for="usr">Maintain Cost:</label>
+                <label for="usr">Maintain Cost %:</label>
                 <input class="form-control" id="costMan" type="text" name="cm">
               </div>
               <div class="form-group">
                 <label for="usr">Q:</label>
                 <input class="form-control" id="qop" type="text" name="qop">
               </div>
-              <button class="btn btn-primary" id="mantener">Calculate CM</button>
+              <button class="btn btn-primary" id="mantener">Calculate</button>
               <p><label id="costo_mantener"></label></p>
             </div>
+
             <!-- #4 -->
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
               <h5>Manage Cost</h5>
               <br>
               <div class="form-group">
@@ -161,20 +166,20 @@
               </div>
               <button class="btn btn-primary" id="gestionar">Calculate CM</button>
               <p><label id="costo_gestionar"></label></p>
-            </div>
-              <!-- #5 -->
+            </div> -->
+              <!-- #4 -->
             <div class="col-md-3">
-              <h5>Calcular Costo Total</h5>
+              <h5>Manage Cost</h5>
               <div class="form-group">
-                <label for="usr">Demanda:</label>
+                <label for="usr">Demand (D):</label>
                 <input class="form-control" id="demandct" type="text" name="demandct">
               </div>
               <div class="form-group">
-                <label for="usr">Costo Orden:</label>
+                <label for="usr">Order Cost (S):</label>
                 <input class="form-control" id="cdct" type="text" name="ordenct">
               </div>
               <div class="form-group">
-                <label for="usr">Costo Mantener:</label>
+                <label for="usr">Maintain Cost %:</label>
                 <input class="form-control" id="cmct" type="text" name="mantenerct">
               </div>
               <div class="form-group">
@@ -182,15 +187,15 @@
                 <input class="form-control" id="qopct" type="text" name="qopct">
               </div>
               <div class="form-group">
-                <label for="usr">Precio Unitario:</label>
+                <label for="usr">Unit Cost (P):</label>
                 <input class="form-control" id="pct" type="text" name="pct">
               </div>
-              <button class="btn btn-primary" id="calc_ct">Calcular Costo</button>
+              <button class="btn btn-primary" id="calc_ct">Calcute </button>
               <p><label id="ct"></label></p>
             </div>
           </div>
         </div>
-      </div>  
+      </div>
     </section>
 
     <section id="Theoryoftails" class="content-section text-center">
@@ -199,13 +204,13 @@
           <div class="row">
             <!-- #1 -->
             <div class="col-md-3">
-              <h5>Probabilidad sin Unidades</h5>
+              <h5>Probability without Units</h5>
               <div class="form-group">
-                <label for="usr">Tasa llegada:</label>
+                <label for="usr">Arrival Rate:</label>
                 <input class="form-control" id="TLLE" type="text" name="TLLE">
               </div>
               <div class="form-group">
-                <label for="usr">Tasa Atendidos:</label>
+                <label for="usr">Service Rate:</label>
                 <input class="form-control" id="TA" type="text" name="TA">
               </div>
               <button class="btn btn-primary" id="PSU">Calculate</button>
@@ -214,13 +219,13 @@
             </div>
             <!-- #2 -->
             <div class="col-md-3">
-              <h5>Longitud Media de la Cola</h5>
+              <h5>Length of Tail Stocking</h5>
               <div class="form-group">
-                <label for="usr">Tasa llegada:</label>
+                <label for="usr">Arrival Rate:</label>
                 <input class="form-control" id="LMCTLLE" type="text" name="TLLE">
               </div>
               <div class="form-group">
-                <label for="usr">Tasa Atendidos:</label>
+                <label for="usr">Service Rate:</label>
                 <input class="form-control" id="LMCTA" type="text" name="TA">
               </div>
               <button class="btn btn-primary" id="LMC">Calculate </button>
@@ -229,32 +234,30 @@
             </div>
             <!-- #3 -->
             <div class="col-md-3">
-              <h5>Tiempo de espera Promedio</h5>
+              <h5>Average Waiting Time</h5>
               <div class="form-group">
-                <label for="usr">Longitud Media de la Cola:</label>
+                <label for="usr">Length of Tail Stocking:</label>
                 <input class="form-control" id="TEPLMC" type="text" name="LMC">
               </div>
               <div class="form-group">
-                <label for="usr">Tasa de llegada:</label>
+                <label for="usr">Arrival Rate:</label>
                 <input class="form-control" id="TEPTLLE" type="text" name="TLLE">
               </div>
               <button class="btn btn-primary" id="TEP">Calculate</button>
               <br><br>
               <p><label id="restiempoEsperaPromedio"></label></p>
-              <p><label id="restiempoMinutos" style="
-    margin-top: -28px;"></label></p>
-              <p><label id="restiempoSegundos" style="
-    margin-top: -28px;"></label></p>
+              <p><label id="restiempoMinutos" style="margin-top: -28px;"></label></p>
+              <p><label id="restiempoSegundos" style="margin-top: -28px;"></label></p>
             </div>
             <!-- #4 -->
             <div class="col-md-3">
-              <h5>Tiempo medio Sistema</h5>
+              <h5>Average System Time</h5>
               <div class="form-group">
-                <label for="usr">Tasa llegada:</label>
+                <label for="usr">Arrival Rate:</label>
                 <input class="form-control" id="TMSLLE" type="text" name="LMC">
               </div>
               <div class="form-group">
-                <label for="usr">Tasa de atendidos:</label>
+                <label for="usr">Service Rate:</label>
                 <input class="form-control" id="TMSTA" type="text" name="TA">
               </div>
               <button class="btn btn-primary" id="TMS">Calculate</button>

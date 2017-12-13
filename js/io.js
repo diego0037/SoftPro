@@ -1,34 +1,37 @@
 var po = 0;
-function PedidoOptimo(d,s,h) {
+function PedidoOptimo(d,s,h,p) {
+    h = (p * h)/100;
     div = Math.ceil(Math.sqrt(2*d*s/h));
-    $('#q').text("Su Q óptimo es de: " + div + " unidades");
+    $('#q').text("Your Optimal Q is: " + div + " Units");
     $('#qo').val(div);
     $('#qop').val(div);
     $('#qopg').val(div);
     $('#qopct').val(div);
+    $('#pct').val(p);
 }
 function PedidosAnuales(d,q) {
     div = Math.ceil(d/q);
-    $('#pa').text("Su numero de pedidos anuales es de: " + div + " pedidos");
+    $('#pa').text("Your annual orders are: " + div);
 }
 function CostoMantener(costo,demanda) {
     costom = costo * (demanda/2);
-    $('#costo_mantener').text("Su costo de mantener las unidades es de: " + costom);
+    $('#costo_mantener').text("Your Units Maintain Cost is: $" + costom);
 }
 function CostoGestionar(h,q,s,d){
     cg = h*(q/2)+s*(d/q)
-    $('#costo_gestionar').text("Su costo de gestionar las unidades es de: " + cg.toFixed(2));
+    $('#costo_gestionar').text("Your Units Manage Cost is: $" + cg.toFixed(2));
 }
 function CostoTotal(p,h,q,s,d){
-    debugger;
     ct = p*q+h*(q/2)+s*(d/q)
-    $('#ct').text("Su costo total es de: " + ct.toFixed(2));
+    $('#ct').text("Your Total Cost is: $" + ct.toFixed(2));
+
+
 }
 
 $(document).ready(function() {
 
     $('#calc').on('click', function(event) {
-        PedidoOptimo(parseInt($('#demand').val()), parseInt($('#cd').val()),parseFloat($('#cm').val()));
+        PedidoOptimo(parseInt($('#demand').val()), parseInt($('#cd').val()),parseFloat($('#cm').val()), parseInt($('#UCP').val()));
         $('#costMan').val($('#cm').val());
         $('#demanda').val(parseInt($('#demand').val()));
 
@@ -94,7 +97,7 @@ function probabilidadSinUnidades() {
   $('#TMSTA').val(y);
   $('#TEPTLLE').val(x);
   $('#TMSLLE').val(x);
-  $('#resProbabilidadSinUnidades').text("La Probabilidad es de: " + res);
+  $('#resProbabilidadSinUnidades').text("The Probability is: " + res);
 }
 
 function longitudMediaCola(){
@@ -109,33 +112,33 @@ function longitudMediaCola(){
   $('#TMSLLE').val(x);
   $('#TLLE').val(x);
   $('#TA').val(y);
-  $('#reslongitudMediaCola').text("La Capacidad promedio es de: " + res);
+  $('#reslongitudMediaCola').text("The Average Capacity is: " + res);
 }
 
 function tiempoEsperaPromedio() {
   var x = $('#TEPLMC').val();
   var y = $('#TEPTLLE').val();
   var res = (x/y).toFixed(4);
-  $('#restiempoEsperaPromedio').text("El tiempo de espera es: " + res +" horas");
+  $('#restiempoEsperaPromedio').text("The Time Waiting is: " + res +" hours");
   var minutos = (res*60/1).toFixed(4);
-  $('#restiempoMinutos').text("El tiempo de espera es: " + minutos +" minutos");
+  $('#restiempoMinutos').text("The Time Waiting is: " + minutos +" minutes");
   var segundos = (res*3600/1).toFixed(4);
-  $('#restiempoSegundos').text("El tiempo de espera es: " + segundos +" segundos");
+  $('#restiempoSegundos').text("The Time Waiting is: " + segundos +" seconds");
 }
 
 function tiempoMedioSistema() {
   if (po ==0) {
-    alert('Datos inconsintentes');
+    alert('Inconsistent Data');
     return;
   }else {
     var x = $('#TMSLLE').val();
     var y = $('#TMSTA').val();
     var res = (x/y).toFixed(4);
-    $('#restiempoMedioSistema').text("Probabilidad de espera por el servicio: " + res);
+    $('#restiempoMedioSistema').text("Probability of Waiting for the Service: " + res);
 
     var res1 = Number(po)+Number(res);
     console.log(res1);
-    $('#resCalidadSistema').text("Po + Pw : " + res1 + ". El servicio es aceptable");
+    $('#resCalidadSistema').text("Po + Pw : " + res1 + ". Acceptable Service");
   }
 
 }
