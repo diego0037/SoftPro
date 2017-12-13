@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<title>Proyecto</title>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <!-- #1 -->
+    <div class="col-md-3">
+      <h3>Calcular pedido optmimo</h3>
+      <div class="form-group">
+        <label for="usr">Demanda:</label>
+        <input class="form-control" id="demand" type="text" name="demand">
+      </div>
+      <div class="form-group">
+        <label for="usr">Costo Orden:</label>
+        <input class="form-control" id="cd" type="text" name="orden">
+      </div>
+      <div class="form-group">
+        <label for="usr">Costo Mantener:</label>
+        <input class="form-control" id="cm" type="text" name="mantener">
+      </div>
+      <button id="calc">Calcular</button>
+      <p><label id="q"></label></p>
+    </div>
+    <!-- #2 -->
+    <div class="col-md-3">
+      <h3>Calcular pedidos anuales</h3>
+      <div class="form-group">
+        <label for="usr">Demanda:</label>
+        <input class="form-control" id="demanda" type="text" name="demanda">
+      </div>
+      <div class="form-group">
+        <label for="usr">Q Óptima:</label>
+        <input class="form-control" id="qo" type="text" name="q">
+      </div>
+      <button id="pedidos">Calcular </button>
+      <p><label id="pa"></label></p>
+    </div>
+    <!-- #3 -->
+    <div class="col-md-3">
+      <h3>Costo mantener</h3>
+      <div class="form-group">
+        <label for="usr">Costo Mantener:</label>
+        <input class="form-control" id="costMan" type="text" name="cm">
+      </div>
+      <div class="form-group">
+        <label for="usr">Q:</label>
+        <input class="form-control" id="qop" type="text" name="qop">
+      </div>
+      <button id="mantener">Calcular CM</button>
+      <p><label id="costo_mantener"></label></p>
+    </div>
+    <!-- #4 -->
+    <div class="col-md-3">
+      <h3>Costo gestionar</h3>
+      <div class="form-group">
+        <label for="usr">Demanda:</label>
+        <input class="form-control" id="demandg" type="text" name="demand">
+      </div>
+      <div class="form-group">
+        <label for="usr">Costo Orden:</label>
+        <input class="form-control" id="cdg" type="text" name="orden">
+      </div>
+      <div class="form-group">
+        <label for="usr">Costo Mantener:</label>
+        <input class="form-control" id="cmg" type="text" name="mantener">
+      </div>
+      <div class="form-group">
+        <label for="usr">Q:</label>
+        <input class="form-control" id="qopg" type="text" name="qop">
+      </div>
+      <button id="gestionar">Calcular CM</button>
+      <p><label id="costo_gestionar"></label></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+    <!-- <h2>Proyecto</h2> -->
+    <!-- <div>
+        <form>
+            <label>Calcular pedido optmimo</label>
+            <p>Demanda: <input id="demand" type="text" name="demand"></p>
+            <p>Costo Orden: <input id="cd" type="text" name="orden"></p>
+            <p>Costo Mantener: <input id="cm" type="text" name="mantener"></p>
+        </form>
+        <button id="calc">Calcular</button>
+        <p><label id="q"></label></p>
+    </div>
+    <br> -->
+    <!-- <div>
+        <form>
+        <label>Calcular pedidos anuales</label>
+            <p>Demanda: <input id="demanda" type="text" name="demanda"></p>
+            <p>Q Óptima: <input id="qo" type="text" name="q"></p>
+        </form>
+        <button id="pedidos">Calcular </button>
+        <p><label id="pa"></label></p>
+    </div> -->
+    <!-- <br> -->
+    <!-- <div>
+        <form>
+            <label>Costo mantener</label>
+            <p>Costo Mantener: <input id="costMan" type="text" name="cm"></p>
+            <p>Q: <input id="qop" type="text" name="qop"></p>
+        </form>
+        <button id="mantener">Calcular CM</button>
+        <p><label id="costo_mantener"></label></p>
+    </div> -->
+    <!-- <div>
+            <form>
+                <label>Costo gestionar</label>
+                <p>Demanda: <input id="demandg" type="text" name="demand"></p>
+                <p>Costo Orden: <input id="cdg" type="text" name="orden"></p>
+                <p>Costo Mantener: <input id="cmg" type="text" name="mantener"></p>
+                <p>Q: <input id="qopg" type="text" name="qop"></p>
+            </form>
+            <button id="gestionar">Calcular CM</button>
+            <p><label id="costo_gestionar"></label></p>
+        </div> -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/io.js"></script></script>
+</body>
+</html>
