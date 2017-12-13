@@ -61,8 +61,6 @@ $(document).ready(function() {
         parseInt($('#cdct').val()),parseInt($('#demandct').val()));
     });
 
-    })
-
     // segundo servicio
     $('#PSU').on('click', function(event) {
         probabilidadSinUnidades();
@@ -82,7 +80,7 @@ $(document).ready(function() {
 
     // fin del segundo servicio
 
-})
+    })
 
 function probabilidadSinUnidades() {
   var x = $('#TLLE').val();
